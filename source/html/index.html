@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-
   @@include("source/html/base/head.html")
   <title>Большая Лига</title>
-
 </head>
+
 <body>
-
-  <div style="display: none;">
-    @@include("build/img/sprite_auto.svg")
-  </div>
-
+  @@include("source/html/base/loader.html")
   <div class="wrapper">
-    @@include("source/html/base/header.html")
-
+    @@include("source/html/base/header.html", {
+      "main" : true
+    })
     <main>
       <div class="container">
+        @@include("source/html/base/intro.html")
       </div>
     </main>
-
     @@include("source/html/base/footer.html")
   </div>
 
