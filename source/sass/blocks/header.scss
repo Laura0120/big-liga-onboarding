@@ -1,3 +1,8 @@
 .header {
   display: block;
+  width: 100%;
+  min-width: $viewport--md;
+  max-width: $viewport--lg;
+  margin: 0 auto;
+  padding: 25px 35px;
 }

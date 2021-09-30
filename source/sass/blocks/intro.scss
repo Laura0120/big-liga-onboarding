@@ -1,0 +1,91 @@
+.intro {
+  &.animate .intro__content-wrapper {
+    animation-name: slideDown;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-delay: 1s;
+  }
+
+  @include viewport--md {
+    height: 100%;
+
+    &.animate .intro__title {
+      animation-name: slideDown;
+      animation-duration: 3s;
+      animation-delay: 1s;
+    }
+
+    & .intro__content {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: -100%;
+      width: 100vw;
+      height: 100%;
+      background-color: $color-neon-blue;
+    }
+
+    & .intro__content-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      padding-top: 160px;
+      align-self: center;
+      animation: none;
+    }
+
+    & .intro__logo-changes-color {
+      fill: $color-default-white;
+    }
+
+    & .intro__description {
+      color: $color-default-white;
+      padding-top: 32px;
+    }
+
+    &--show-content .intro__content {
+      animation-duration: 1s;
+      animation-name: slideToRight;
+      animation-fill-mode: forwards;
+    }
+
+    &--hide-content .intro__content {
+      animation-duration: 1s;
+      animation-name: slideToLeft;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+.intro__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.intro__title {
+  max-width: 640px;
+  margin: 0;
+  font-size: 96px;
+  line-height: 96px;
+  color: $color-neon-blue;
+  padding-top: calc(((100vh - 380px) / 2) - 89px);
+  // padding-top: calc(((100 * var(--vh, 1vh) - 380px) / 2) - 89px);
+}
+
+.intro__content {
+  @include viewport--md {
+    display: none;
+  }
+}
+
+.intro__description {
+  width: 352px;
+  margin: 0;
+  padding-top: 26px;
+  font-size: 30px;
+  line-height: 40px;
+}
